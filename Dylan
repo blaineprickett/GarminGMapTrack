@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Dylan's PCT Hike</title>
+    <style>
+      html, body {
+        height: 480px;
+        padding: 0;
+        margin: 0;
+        }
+      #map {
+       height: 480px;
+       width: 100%;
+       overflow: hidden;
+       float: left;
+       border: thin solid #333;
+       }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      var src = 'https://share.garmin.com/Feed/ShareLoader/DylanPCT?d1=2022-05-09T08:02z';
+      var src = 'https://share.garmin.com/Feed/Share/DylanPCT?d1=2022-05-09T08:02z';
+      
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: new google.maps.LatLng(37.819616, -119.959723),
+          zoom: 1,
+          mapTypeId: 'terrain'
+        });
+        var kmlLayer = new google.maps.KmlLayer(src, {
+          suppressInfoWindows: false,
+          preserveViewport: false,
+          map: map
+        });
+      }
+    </script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZXWrms5ZaLtSdSzumDlkI5rzE5Uehr0U&callback=initMap">
+    </script>
+  </body>
+</html>
