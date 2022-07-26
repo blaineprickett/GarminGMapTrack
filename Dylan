@@ -40,7 +40,7 @@
       }
     </script>
     <script async
-    src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLEMAPS_JAVASCRIPT_API_KEY_HERE&callback=initMap">
+    src="YOUR_GOOGLEMAPS_JAVASCRIPT_API_KEY_HERE">
     </script>
   </body>
 </html>
